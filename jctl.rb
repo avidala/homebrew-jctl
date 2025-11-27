@@ -4,7 +4,7 @@ class Jctl < Formula
   desc "Jenkins Control CLI with Okta SSO - Part of AVIDALA DevOps Tools"
   homepage "https://github.com/avidala/jctl"
   url "https://github.com/avidala/jctl/releases/download/v0.1.0/jctl-0.1.0.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "b4864f5d209fd1ea20e3170f844b85017e757d31b9795794f32fbbe38f0721e3"
   license "MIT"
 
   depends_on "python@3.10"
