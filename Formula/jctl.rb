@@ -3,8 +3,8 @@ class Jctl < Formula
 
   desc "Jenkins Control CLI with Okta SSO"
   homepage "https://github.com/avidala/jctl"
-  url "https://github.com/avidala/jctl/releases/download/v0.1.0/jctl-0.1.0.tar.gz"
-  sha256 "b4864f5d209fd1ea20e3170f844b85017e757d31b9795794f32fbbe38f0721e3"
+  url "https://github.com/avidala/jctl/releases/download/v0.2.0/jctl-0.2.0.tar.gz"
+  sha256 "3656cd7a486932a6263a686895ac3f0b2aa58072197700a57077745c49a056cf"
   license "MIT"
 
   livecheck do
@@ -44,11 +44,6 @@ class Jctl < Formula
   resource "authlib" do
     url "https://files.pythonhosted.org/packages/36/98/7d93f30d029643c0275dbc0bd6d5a6f670661ee6c9a94d93af7ab4887600/authlib-1.7.2.tar.gz"
     sha256 "2cea25fefcd4e7173bdf1372c0afc265c8034b23a8cd5dcb6a9164b826c64231"
-  end
-
-  resource "backports-tarfile" do
-    url "https://files.pythonhosted.org/packages/86/72/cd9b395f25e290e633655a100af28cb253e4393396264a98bd5f5951d50f/backports_tarfile-1.2.0.tar.gz"
-    sha256 "d75e02c268746e1b8144c278978b6e98e85de6ad16f8e4b0844a154557eca991"
   end
 
   resource "certifi" do
@@ -92,8 +87,8 @@ class Jctl < Formula
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz"
-    sha256 "466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3"
+    url "https://files.pythonhosted.org/packages/82/77/7b3966d0b9d1d31a36ddf1746926a11dface89a83409bf1483f0237aa758/idna-3.15.tar.gz"
+    sha256 "ca962446ea538f7092a95e057da437618e886f4d349216d2b1e294abfdb65fdc"
   end
 
   resource "jaraco-classes" do
@@ -191,11 +186,6 @@ class Jctl < Formula
     sha256 "edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36"
   end
 
-  resource "sniffio" do
-    url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
-    sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
-  end
-
   resource "tenacity" do
     url "https://files.pythonhosted.org/packages/47/c6/ee486fd809e357697ee8a44d3d69222b344920433d3b6666ccd9b374630c/tenacity-9.1.4.tar.gz"
     sha256 "adb31d4c263f2bd041081ab33b498309a57c77f9acf2db65aadf0898179cf93a"
@@ -215,6 +205,7 @@ class Jctl < Formula
     url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
+
   # END AUTO-GENERATED RESOURCES
 
   def install
