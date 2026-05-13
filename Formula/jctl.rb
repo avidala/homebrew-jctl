@@ -3,8 +3,8 @@ class Jctl < Formula
 
   desc "Jenkins Control CLI with Okta SSO"
   homepage "https://github.com/avidala/jctl"
-  url "https://github.com/avidala/jctl/releases/download/v0.2.1/jctl-0.2.1.tar.gz"
-  sha256 "0884e9d18c02f8a7756eaabef32dc48cd8ec1e03272836f5f051cfa05e124def"
+  url "https://github.com/avidala/jctl/releases/download/v0.2.2/jctl-0.2.2.tar.gz"
+  sha256 "f923b4e5d930df4c03aa99be7c0a96a0af7dc9e02efd53c91b36ec8f1bc36e2c"
   license "MIT"
 
   livecheck do
