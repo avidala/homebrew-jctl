@@ -1,0 +1,48 @@
+name: brew test
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-bot:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@master
+
+      - name: Checkout tap
+        uses: actions/checkout@v5
+        with:
+          path: tap
+
+      - name: Tap from local checkout
+        run: |
+          TAP_DIR="$(brew --repository)/Library/Taps/avidala/homebrew-jctl"
+          mkdir -p "$(dirname "$TAP_DIR")"
+          ln -s "$GITHUB_WORKSPACE/tap" "$TAP_DIR"
+
+      - name: brew style
+        run: brew style avidala/jctl
+
+      - name: brew audit
+        run: brew audit --strict --online --formula avidala/jctl/jctl
+
+      - name: brew install
+        run: brew install --build-from-source --verbose avidala/jctl/jctl
+
+      - name: brew test
+        run: brew test avidala/jctl/jctl
+
+      - name: brew linkage
+        run: brew linkage --test avidala/jctl/jctl
