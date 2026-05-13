@@ -21,17 +21,6 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Checkout tap
-        uses: actions/checkout@v5
-        with:
-          path: tap
-
-      - name: Tap from local checkout
-        run: |
-          TAP_DIR="$(brew --repository)/Library/Taps/avidala/homebrew-jctl"
-          mkdir -p "$(dirname "$TAP_DIR")"
-          ln -s "$GITHUB_WORKSPACE/tap" "$TAP_DIR"
-
       - name: brew style
         run: brew style avidala/jctl
 
