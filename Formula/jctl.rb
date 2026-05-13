@@ -7,9 +7,16 @@ class Jctl < Formula
   sha256 "b4864f5d209fd1ea20e3170f844b85017e757d31b9795794f32fbbe38f0721e3"
   license "MIT"
 
-  depends_on "libyaml"
-  depends_on "python@3.13"
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   depends_on "rust" => :build
+  depends_on "libffi"
+  depends_on "libyaml"
+  depends_on "openssl@3"
+  depends_on "python@3.13"
 
   on_linux do
     resource "jeepney" do
@@ -23,6 +30,7 @@ class Jctl < Formula
     end
   end
 
+  # BEGIN AUTO-GENERATED RESOURCES (managed by jctl bump-homebrew-formula workflow)
   resource "annotated-types" do
     url "https://files.pythonhosted.org/packages/ee/67/531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5/annotated_types-0.7.0.tar.gz"
     sha256 "aff07c09a53a08bc8cfccb9c85b05f1aa9a2a6f23728d790723543408344ce89"
@@ -207,6 +215,7 @@ class Jctl < Formula
     url "https://files.pythonhosted.org/packages/53/0c/06f8b233b8fd13b9e5ee11424ef85419ba0d8ba0b3138bf360be2ff56953/urllib3-2.7.0.tar.gz"
     sha256 "231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c"
   end
+  # END AUTO-GENERATED RESOURCES
 
   def install
     virtualenv_install_with_resources
